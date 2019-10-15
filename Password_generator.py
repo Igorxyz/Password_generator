@@ -65,6 +65,7 @@ try:
         time.sleep(0.25)
 
     while True: 
+        print()
         user_input = input("Choose an option: ")
         if (user_input in password_options.keys()):
             if (user_input == "6"):
@@ -82,9 +83,11 @@ try:
                     print(term_colors.WARN + "Input already in options" +term_colors.NORM)
                     continue
                 user_options.append(user_input)
-                print("User options status: {}".format(user_options))
+                print()
+                print("Password will be generated with:")
+                for option_num in user_options:
+                    print(password_options[option_num])
                 continue
-
         else:
             print(term_colors.WARN + "Please choose a number from list." + term_colors.NORM)
             continue 
